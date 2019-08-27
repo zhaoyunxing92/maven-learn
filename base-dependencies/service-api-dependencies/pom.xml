@@ -12,4 +12,10 @@
 
     <artifactId>service-api-dependencies</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>io.github.sunny</groupId>
+            <artifactId>common-dependencies</artifactId>
+        </dependency>
+    </dependencies>
 </project>

@@ -17,7 +17,7 @@
         <module>web-api-dependencies</module>
         <module>service-dependencies</module>
         <module>service-api-dependencies</module>
+        <module>common-dependencies</module>
     </modules>
-
 
 </project>
