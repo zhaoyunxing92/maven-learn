@@ -11,4 +11,10 @@
 
     <artifactId>user-service</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>io.github.sunny</groupId>
+            <artifactId>service-dependencies</artifactId>
+        </dependency>
+    </dependencies>
 </project>

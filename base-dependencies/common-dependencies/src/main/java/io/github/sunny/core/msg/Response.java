@@ -34,10 +34,10 @@ public class Response<T> implements Serializable {
     }
 
     public static Response createSuccess(String msg) {
-        return createSuccess(msg, null);
+        return createSuccess(msg, (Object) null);
     }
 
-    public static Response createSuccess(String msg, String... args) {
+    public static Response createSuccess(String msg, Object... args) {
         return createFormatMsg(msg, null, true, args);
     }
 

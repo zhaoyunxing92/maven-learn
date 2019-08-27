@@ -1,6 +1,6 @@
 spring:
   application:
-    name: @project.artifactId@
+    name: web-api
   profiles:
     active: local
 server:

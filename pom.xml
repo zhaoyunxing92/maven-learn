@@ -26,4 +26,5 @@
         <module>server-api</module>
         <module>base-dependencies</module>
     </modules>
+
 </project>
