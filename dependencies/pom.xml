@@ -7,13 +7,13 @@
 
     <groupId>io.github.sunny</groupId>
     <artifactId>dependencies</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>${revision}</version>
     <packaging>pom</packaging>
 
     <properties>
+        <revision>1.0-SNAPSHOT</revision>
         <spring.boot.version>2.1.0.RELEASE</spring.boot.version>
         <fastjson.version>1.2.58</fastjson.version>
-        <revision>1.0-SNAPSHOT</revision>
     </properties>
 
     <dependencyManagement>
@@ -22,37 +22,37 @@
             <dependency>
                 <groupId>io.github.sunny</groupId>
                 <artifactId>user-api</artifactId>
-                <version>${revision}</version>
+                <version>${project.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>io.github.sunny</groupId>
                 <artifactId>order-api</artifactId>
-                <version>${revision}</version>
+                <version>${project.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>io.github.sunny</groupId>
                 <artifactId>web-api-dependencies</artifactId>
-                <version>${revision}</version>
+                <version>${project.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>io.github.sunny</groupId>
                 <artifactId>service-dependencies</artifactId>
-                <version>${revision}</version>
+                <version>${project.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>io.github.sunny</groupId>
                 <artifactId>service-api-dependencies</artifactId>
-                <version>${revision}</version>
+                <version>${project.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>io.github.sunny</groupId>
                 <artifactId>app-api-dependencies</artifactId>
-                <version>${revision}</version>
+                <version>${project.version}</version>
             </dependency>
 
             <dependency>

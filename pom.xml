@@ -7,14 +7,18 @@
     <parent>
         <artifactId>dependencies</artifactId>
         <groupId>io.github.sunny</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${revision}</version>
         <relativePath>./dependencies/pom.xml</relativePath>
     </parent>
 
     <!--<groupId>io.github.sunny</groupId>-->
     <artifactId>maven-learn</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>${revision}</version>
     <packaging>pom</packaging>
+
+    <properties>
+        <revision>1.0-SNAPSHOT</revision>
+    </properties>
 
     <modules>
         <module>dependencies</module>
@@ -22,18 +26,6 @@
         <module>server-api</module>
         <module>base-dependencies</module>
     </modules>
-
-    <!--<dependencyManagement>-->
-    <!--<dependencies>-->
-    <!--<dependency>-->
-    <!--<groupId>io.github.sunny</groupId>-->
-    <!--<artifactId>dependencies</artifactId>-->
-    <!--<version>${project.version}</version>-->
-    <!--<type>pom</type>-->
-    <!--<scope>import</scope>-->
-    <!--</dependency>-->
-    <!--</dependencies>-->
-    <!--</dependencyManagement>-->
 
     <dependencies>
         <dependency>
