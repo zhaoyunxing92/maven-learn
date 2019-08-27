@@ -7,6 +7,36 @@
     <groupId>io.github.sunny</groupId>
     <artifactId>maven-learn</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
+    <properties>
+        <spring.boot.version>2.1.0.RELEASE</spring.boot.version>
+        <fastjson.version>1.2.58</fastjson.version>
+    </properties>
 
+    <modules>
+        <module>dependencies</module>
+        <module>server</module>
+        <module>server-api</module>
+        <module>base-dependencies</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.github.sunny</groupId>
+                <artifactId>dependencies</artifactId>
+                <version>${project.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
 </project>

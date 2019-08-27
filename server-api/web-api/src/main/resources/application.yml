@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: @project.artifactId@
+  profiles:
+    active: local
+server:
+  port: 8082
