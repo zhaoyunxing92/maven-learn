@@ -21,6 +21,11 @@
 
             <dependency>
                 <groupId>io.github.sunny</groupId>
+                <artifactId>order-service</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.sunny</groupId>
                 <artifactId>common-dependencies</artifactId>
                 <version>${project.version}</version>
             </dependency>

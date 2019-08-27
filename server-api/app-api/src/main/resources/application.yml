@@ -5,3 +5,5 @@ spring:
     active: local
 server:
   port: 8081
+
+version: @project.version@
