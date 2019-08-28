@@ -6,9 +6,9 @@
 
 ## 参考文档
 
-* [maven-ci-friendly](https://maven.apache.org/maven-ci-friendly.html)
+* [maven-ci-friendly](https://maven.apache.org/maven-ci-friendly.html) 动态ci使用说明
 
-* [maven-3.5.0-beta-notes](https://maven.apache.org/docs/3.5.0-beta-1/release-notes.html)
+* [maven-3.5.0-beta-notes](https://maven.apache.org/docs/3.5.0-beta-1/release-notes.html) 主要添加动态修改版本号
 
 ## 目录结构说明
 
@@ -34,3 +34,13 @@
     ├── app-api  -- 手机端api
     └── web-api  -- h5端api
 ```
+
+## maven基本概念
+
+### maven生命周期
+
+* **validate** 验证项目是否正确,pom依赖关系是否正确,但是不检查代码本身语法
+
+* **compile** 编译项目代码(检查代码语法、pom依赖关系)
+
+* **test** 执行单元测试代码

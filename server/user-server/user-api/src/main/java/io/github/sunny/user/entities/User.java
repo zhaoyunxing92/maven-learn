@@ -6,7 +6,6 @@ package io.github.sunny.user.entities;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.ToString;
-
 /**
  * @author zhaoyunxing
  * @date: 2019-08-28 10:18
