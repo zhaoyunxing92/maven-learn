@@ -18,10 +18,6 @@
         </dependency>
         <dependency>
             <groupId>io.github.sunny</groupId>
-            <artifactId>user-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.github.sunny</groupId>
             <artifactId>order-service</artifactId>
         </dependency>
     </dependencies>
