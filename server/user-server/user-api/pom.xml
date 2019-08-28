@@ -14,7 +14,7 @@
     <dependencies>
         <dependency>
             <groupId>io.github.sunny</groupId>
-            <artifactId>user-api</artifactId>
+            <artifactId>order-api</artifactId>
         </dependency>
         <dependency>
             <groupId>io.github.sunny</groupId>
