@@ -20,7 +20,7 @@ notifications:
 deploy:
   provider: script
   script:
-    - travis_wait 30 mvn clean package -DskipTests=false -Dcheckstyle.skip=false
+    - travis_wait 30 mvn clean package -DskipTests=true -Dcheckstyle.skip=true
     - mvn clean
   on:
     branch: master
