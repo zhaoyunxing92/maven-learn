@@ -4,27 +4,128 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <artifactId>dependencies</artifactId>
-        <groupId>io.github.sunny</groupId>
-        <version>${revision}</version>
-        <relativePath>./dependencies/pom.xml</relativePath>
-    </parent>
-
-    <!--<groupId>io.github.sunny</groupId>-->
+    <groupId>io.github.sunny</groupId>
     <artifactId>maven-learn</artifactId>
     <version>${revision}</version>
     <packaging>pom</packaging>
 
     <properties>
         <revision>1.0-SNAPSHOT</revision>
+        <spring.boot.version>2.1.0.RELEASE</spring.boot.version>
+        <fastjson.version>1.2.58</fastjson.version>
+        <flatten-maven-plugin.version>1.1.0</flatten-maven-plugin.version>
     </properties>
 
     <modules>
-        <module>dependencies</module>
         <module>server</module>
         <module>server-api</module>
         <module>base-dependencies</module>
     </modules>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>io.github.sunny</groupId>
+                <artifactId>order-service</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.sunny</groupId>
+                <artifactId>common-dependencies</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.github.sunny</groupId>
+                <artifactId>user-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.github.sunny</groupId>
+                <artifactId>order-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.github.sunny</groupId>
+                <artifactId>web-api-dependencies</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.github.sunny</groupId>
+                <artifactId>service-dependencies</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.github.sunny</groupId>
+                <artifactId>service-api-dependencies</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.github.sunny</groupId>
+                <artifactId>app-api-dependencies</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+            <!--spring boot-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>flatten-maven-plugin</artifactId>
+                <version>${flatten-maven-plugin.version}</version>
+                <configuration>
+                    <updatePomFile>true</updatePomFile>
+                    <flattenMode>resolveCiFriendliesOnly</flattenMode>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>flatten</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>flatten</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>flatten.clean</id>
+                        <phase>clean</phase>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
