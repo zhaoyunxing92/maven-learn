@@ -24,6 +24,6 @@ public class OrderServiceImplTest {
     @Test
     public void findById() {
         Response<?> order = orderService.findById("2");
-        Assert.isTrue(!order.getSuccess(), "没有查到订单为2的信息");
+        Assert.isTrue(order.getSuccess(), "没有查到订单为2的信息");
     }
 }
