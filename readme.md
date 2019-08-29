@@ -180,6 +180,9 @@
 
 #### 插件安利
 
+ * `docker-maven-plugin` 编译docker images 代码参考地址: https://github.com/zhaoyunxing92/springboot-docker
+ 
+ * `git-commit-id-plugin`
 
 
 #### [插件开发](http://maven.apache.org/guides/plugin/guide-java-report-plugin-development.html)

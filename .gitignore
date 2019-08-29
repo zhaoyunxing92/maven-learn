@@ -6,3 +6,5 @@
 .flattened-pom.xml
 # mvn versions:set -DnewVersion=xxx 生成的文件
 pom.xml.versionsBackup
+
+git.properties
