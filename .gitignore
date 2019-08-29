@@ -2,3 +2,7 @@
 .idea
 *.iml
 **/target
+# mvn clean install -Drevision=xxx 生成的文件
+.flattened-pom.xml
+# mvn versions:set -DnewVersion=xxx 生成的文件
+pom.xml.versionsBackup
