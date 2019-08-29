@@ -5,7 +5,7 @@ package io.github.sunny.bean;
 
 /**
  * @author zhaoyunxing
- * @date: 2019-08-27 18:04
+ * @date: 2019-08-29 18:58
  * @des:
  */
 public class WebBean {

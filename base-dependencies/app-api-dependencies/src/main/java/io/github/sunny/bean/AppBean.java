@@ -5,7 +5,7 @@ package io.github.sunny.bean;
 
 /**
  * @author zhaoyunxing
- * @date: 2019-08-27 18:01
+ * @date: 2019-08-29 18:57
  * @des:
  */
 public class AppBean {

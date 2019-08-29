@@ -3,8 +3,10 @@
  */
 package io.github.sunny.core.adapter;
 
-import io.github.sunny.bean.AppBean;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
@@ -12,6 +14,12 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * @date: 2019-08-27 17:49
  * @des:
  */
+@Slf4j
+@Configuration
 @ConditionalOnClass(AppBean.class)
+@ConditionalOnWebApplication
 public class AppWebMvcConfigurerAdapter implements WebMvcConfigurer {
+    public AppWebMvcConfigurerAdapter() {
+        log.error("AppBean...");
+    }
 }
