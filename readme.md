@@ -12,7 +12,7 @@
 
 * [encryption](http://maven.apache.org/guides/mini/guide-encryption.html) settings.xml密码脱密
 
-## 目录结构说明
+### 目录结构说明
 
 ```log
 ├── base-dependencies  -- 管理依赖
@@ -54,9 +54,9 @@
   
   * 缺点: 代码全部公开
 
-## maven基本概念
+### maven基本概念
 
-### maven生命周期
+#### maven生命周期
 
 * **validate** 验证项目是否正确,pom依赖关系是否正确,但是不检查代码本身语法
 
@@ -72,15 +72,89 @@
 
 * **deploy** 打包上传服务器
 
-### 依赖关系
+#### 依赖关系
 
-### pom配置
+假如项目A依赖
+
+#### pom配置
 
 #### 统一版本号
 
+场景: 假如我们开发完成一个周期开发,或者完成一个版本开发需要编译一个版本
+
+* 在`3.5.0-beta-1`版本以前
+
+  ```shell
+  # 先修改版本
+  mvn versions:set -DnewVersion=1.0.2-SNAPSHOT
+  
+  # 这个时候会生成一个备份文件`pom.xml.versionsBackup`,如果你测试发现编译的`1.0.2-SNAPSHOT`需要归回滚或者放弃
+  mvn versions:revert
+  
+  # 确定后提交本次修改
+  mvn versions:commit
+  ```
+
+* 在`3.5.0-beta-1`版本之后
+
+  添加了${revision}, ${sha1} , ${changelist} 三个关键字,方便动态修改版本
+ 
+  ```shell
+  mvn -Drevision=xxx
+  ```
+ 
+  这样pom文件必须添加`flatten-maven-plugin`
+  
+   ```xml
+     <project>
+           <modelVersion>4.0.0</modelVersion>
+           <groupId>io.github.sunny</groupId>
+           <artifactId>ci-maven</artifactId>
+           <version>${revision}</version>
+           ...
+           <properties>
+             <revision>1.0.0-SNAPSHOT</revision>
+           </properties>
+         
+          <build>
+           <plugins>
+             <plugin>
+               <groupId>org.codehaus.mojo</groupId>
+               <artifactId>flatten-maven-plugin</artifactId>
+               <version>1.1.0</version>
+               <configuration>
+                 <updatePomFile>true</updatePomFile>
+                 <flattenMode>resolveCiFriendliesOnly</flattenMode>
+               </configuration>
+               <executions>
+                 <execution>
+                   <id>flatten</id>
+                   <phase>process-resources</phase>
+                   <goals>
+                     <goal>flatten</goal>
+                   </goals>
+                 </execution>
+                 <execution>
+                   <id>flatten.clean</id>
+                   <phase>clean</phase>
+                   <goals>
+                     <goal>clean</goal>
+                   </goals>
+                 </execution>
+               </executions>
+             </plugin>
+           </plugins>
+           </build>
+           <modules>
+             <module>child1</module>
+             ...
+           </modules>
+     </project>
+   ```
+ 
 #### [version有几种写法](https://maven.apache.org/pom.html)
 
-这个是需要了解即可
+这个是需要了解即可,遇到了能知道即可
 
  * **1.0**: 项目依赖版本是1.0
  
@@ -100,17 +174,17 @@
 
 > 技巧: `[`在那边最终版本选择就靠近那边,且版本号最大的
 
-#### 
+#### settings.xml文件配置
 
-### settings文件配置
+#### [密码加密](http://maven.apache.org/guides/mini/guide-encryption.html)
 
-#### 密码加密
+#### 插件安利
 
-#### 
 
-### [插件开发](http://maven.apache.org/guides/plugin/guide-java-report-plugin-development.html)
 
-#### 配置读取
+#### [插件开发](http://maven.apache.org/guides/plugin/guide-java-report-plugin-development.html)
 
-####
+##### 配置读取
+
+##### debug插件
 
