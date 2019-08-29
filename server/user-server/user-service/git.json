@@ -1,0 +1,22 @@
+{
+  "git.branch" : "develop",
+  "git.build.host" : "g50",
+  "git.build.time" : "2019-08-29 17:59:09:438",
+  "git.build.user.email" : "2385585770@qq.com",
+  "git.build.user.name" : "zhaoyunxing92",
+  "git.build.version" : "1.0-SNAPSHOT",
+  "git.closest.tag.commit.count" : "",
+  "git.closest.tag.name" : "",
+  "git.commit.id" : "562a1e74804e09d84282b89425eefa6ce487c28a",
+  "git.commit.id.abbrev" : "562a1e7",
+  "git.commit.id.describe" : "562a1e7-dirty",
+  "git.commit.id.describe-short" : "562a1e7-dirty",
+  "git.commit.message.full" : "[up]更新依赖关系",
+  "git.commit.message.short" : "[up]更新依赖关系",
+  "git.commit.time" : "2019-08-29 17:31:29:000",
+  "git.commit.user.email" : "2385585770@qq.com",
+  "git.commit.user.name" : "zhaoyunxing92",
+  "git.dirty" : "true",
+  "git.remote.origin.url" : "git@github.com:zhaoyunxing92/maven-learn.git",
+  "git.tags" : ""
+}
