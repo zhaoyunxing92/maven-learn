@@ -8,7 +8,7 @@
     <parent>
         <artifactId>base-dependencies</artifactId>
         <groupId>io.github.sunny</groupId>
-        <version>${revision}</version>
+        <version>1.0.0-RELEASE</version>
     </parent>
 
     <artifactId>common-dependencies</artifactId>
