@@ -32,6 +32,8 @@ script:
 after_success:
   - echo mvn compile success begin git make branch
   - git log
+  - git config user.name
+  - git remote -v
   #- bash <(curl -s https://codecov.io/bash) # 编译通过后启用codecov
 
 # 失败后撤回代码
