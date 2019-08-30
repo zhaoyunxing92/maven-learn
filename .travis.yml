@@ -28,10 +28,20 @@ branches:
 script:
   - travis_wait 30 mvn clean compile -Dmaven.test.skip=false -Dcheckstyle.skip=false
 
+
+deploy:
+  provider: releases
+  skip_cleanup: true
+  github_token: ${github_token}
+  on:
+    branch: master
+
 # 成功后创建分支
 after_success:
   - echo mvn compile success begin git make branch
   - git log
+  - git config user.name "${name}"
+  - git config user.email "${email}"
   - git config user.name
   - git remote -v
   #- bash <(curl -s https://codecov.io/bash) # 编译通过后启用codecov
