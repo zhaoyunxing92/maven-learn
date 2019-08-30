@@ -8,6 +8,12 @@ cache:
     - $HOME/.m2
 install: true
 
+env:
+  global:
+    - branch_name: maven-2.x
+    - branch_version: 2.0
+    - repo_url: github.com/zhaoyunxing92/maven-learn.git
+
 # 配置邮箱通知
 notifications:
   email:
@@ -39,11 +45,19 @@ deploy:
 # 成功后创建分支
 after_success:
   - echo mvn compile success begin git make branch
-  - git log
+  - git chechout -b ${branch_name}
   - git config user.name "${name}"
   - git config user.email "${email}"
-  - git config user.name
-  - git remote -v
+  - mvn versions:set -DnewVersion=2.0
+  - mvn versions:commit
+  - git commit -am '[up]修改版本为${branch_name}'
+  - git push --quiet "https://${github_token}@${repo_url}" ${branch_name}:${branch_name}
   #- bash <(curl -s https://codecov.io/bash) # 编译通过后启用codecov
 
 # 失败后撤回代码
+after_failure:
+  - echo mvn comile fail begin git rooback
+  - git config user.name "${name}"
+  - git config user.email "${email}"
+  - git reset --hard ^
+  - git push -f --quiet "https://${github_token}@${repo_url}" ${branch_name}:${branch_name}
