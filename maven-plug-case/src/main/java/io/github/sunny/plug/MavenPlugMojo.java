@@ -31,7 +31,7 @@ import java.io.IOException;
  * @goal touch
  * @phase process-sources
  */
-@Mojo(name = "plug")
+@Mojo(name = "start")
 public class MavenPlugMojo extends AbstractMojo {
     /**
      * Location of the file.
@@ -47,11 +47,8 @@ public class MavenPlugMojo extends AbstractMojo {
     @Override
     public void execute() throws MojoExecutionException {
         getLog().info("=================== MavenPlugMojo begin ===================");
-
         getLog().info("===============读取配置数据==============");
-
         getLog().info("name=" + name);
-
         getLog().info("=============================");
     }
 }
