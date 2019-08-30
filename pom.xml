@@ -119,6 +119,20 @@
                 </executions>
             </plugin>
 
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                    <verbose>true</verbose>
+                    <showWarnings>true</showWarnings>
+                    <compilerVersion>1.8</compilerVersion>
+                </configuration>
+            </plugin>
+
         </plugins>
 
         <pluginManagement>
