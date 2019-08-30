@@ -40,8 +40,8 @@ branches:
     - master
 
 before_script:
-  - echo 'maven install maven-plug-case'
-  - mvn install -pl maven-plug-case -am
+  - echo 'maven install all'
+  - mvn install
 
 script:
   - travis_wait 15 mvn clean compile -Dmaven.test.skip=false -Dcheckstyle.skip=false
