@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
 
     <properties>
+        <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
         <revision>1.0-SNAPSHOT</revision>
         <spring.boot.version>2.1.0.RELEASE</spring.boot.version>
         <fastjson.version>1.2.58</fastjson.version>
@@ -127,7 +128,7 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
-                    <encoding>UTF-8</encoding>
+                    <encoding>utf-8</encoding>
                     <verbose>false</verbose>
                     <showWarnings>false</showWarnings>
                     <compilerVersion>1.8</compilerVersion>
