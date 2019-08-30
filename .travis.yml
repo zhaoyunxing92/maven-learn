@@ -6,13 +6,21 @@ jdk:
 cache:
   directories:
     - $HOME/.m2
-install: true
+#install: true
 
 env:
   global:
     - branch_name: maven-2.x
     - branch_version: 2.0
     - repo_url: github.com/zhaoyunxing92/maven-learn.git
+
+before_install:
+  - echo "install maven 3.6.1"
+  - wget https://mirrors.tuna.tsinghua.edu.cn/apache/maven/maven-3/3.6.1/binaries/apache-maven-3.6.1-bin.zip
+   && unzip -qq apache-maven-3.6.1-bin.zip
+   && export M2_HOME=$PWD/apache-maven-3.2.5
+   && export PATH=$M2_HOME/bin:$PATH
+   && mvn -version
 
 # 配置邮箱通知
 notifications:
@@ -34,14 +42,6 @@ branches:
 script:
   - travis_wait 30 mvn clean compile -Dmaven.test.skip=false -Dcheckstyle.skip=false
 
-
-deploy:
-  provider: releases
-  skip_cleanup: true
-  github_token: ${github_token}
-  on:
-    branch: master
-
 # 成功后创建分支
 after_success:
   - echo mvn compile success begin git make branch
@@ -51,7 +51,7 @@ after_success:
   - mvn versions:set -DnewVersion=2.0
   - mvn versions:commit
   - git commit -am '[up]修改版本为${branch_name}'
-  - git push --quiet "https://${github_token}@${repo_url}" ${branch_name}:${branch_name}
+  - git push -f --quiet "https://${github_token}@${repo_url}" ${branch_name}:${branch_name}
   #- bash <(curl -s https://codecov.io/bash) # 编译通过后启用codecov
 
 # 失败后撤回代码
