@@ -18,11 +18,11 @@
         </dependency>
         <dependency>
             <groupId>io.github.sunny</groupId>
-            <artifactId>user-api</artifactId>
+            <artifactId>order-service</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.github.sunny</groupId>
-            <artifactId>order-api</artifactId>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
         </dependency>
     </dependencies>
 </project>
