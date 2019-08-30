@@ -15,17 +15,22 @@
         <fastjson.version>1.2.58</fastjson.version>
         <flatten-maven-plugin.version>1.1.0</flatten-maven-plugin.version>
         <git-commit-id-plugin.version>2.2.4</git-commit-id-plugin.version>
+        <maven-learn-core.version>1.0</maven-learn-core.version>
     </properties>
 
     <modules>
         <module>server</module>
         <module>server-api</module>
         <module>base-dependencies</module>
-        <!--<module>core</module>-->
     </modules>
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>io.github.sunny</groupId>
+                <artifactId>maven-learn-core</artifactId>
+                <version>${maven-learn-core.version}</version>
+            </dependency>
             <dependency>
                 <groupId>io.github.sunny</groupId>
                 <artifactId>order-service</artifactId>
@@ -128,7 +133,7 @@
                     <target>1.8</target>
                     <encoding>UTF-8</encoding>
                     <verbose>true</verbose>
-                    <showWarnings>true</showWarnings>
+                    <showWarnings>false</showWarnings>
                     <compilerVersion>1.8</compilerVersion>
                 </configuration>
             </plugin>
