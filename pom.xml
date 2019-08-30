@@ -6,7 +6,7 @@
 
     <groupId>io.github.sunny</groupId>
     <artifactId>maven-learn</artifactId>
-    <version>1.0.0-RELEASE</version>
+    <version>1.0</version>
     <packaging>pom</packaging>
 
     <properties>
