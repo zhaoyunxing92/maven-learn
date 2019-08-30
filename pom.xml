@@ -21,6 +21,7 @@
         <module>server</module>
         <module>server-api</module>
         <module>base-dependencies</module>
+        <module>maven-plug-case</module>
         <!--<module>core</module>-->
     </modules>
 
@@ -127,16 +128,20 @@
                     <source>1.8</source>
                     <target>1.8</target>
                     <encoding>UTF-8</encoding>
-                    <verbose>true</verbose>
-                    <showWarnings>true</showWarnings>
+                    <verbose>false</verbose>
+                    <showWarnings>false</showWarnings>
                     <compilerVersion>1.8</compilerVersion>
                 </configuration>
             </plugin>
-
         </plugins>
 
         <pluginManagement>
             <plugins>
+                <plugin>
+                    <groupId>io.github.sunny</groupId>
+                    <artifactId>maven-plug-case</artifactId>
+                    <version>${project.version}</version>
+                </plugin>
                 <plugin>
                     <groupId>pl.project13.maven</groupId>
                     <artifactId>git-commit-id-plugin</artifactId>
