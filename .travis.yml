@@ -6,7 +6,7 @@ jdk:
 cache:
   directories:
     - $HOME/.m2
-#install: true #跳过安装
+install: true #跳过安装
 
 
 env:
@@ -32,14 +32,19 @@ notifications:
 #      - zhaoyunxing@ccclubs.com
 #      - 2385585770@qq.com
 
+
+
 # 只在master分支工作
 branches:
   only:
     - master
 
+before_script:
+  - echo 'maven install maven-plug-case'
+  - mvn install -pl maven-plug-case -am
+
 script:
-  - travis_wait 15 mvn install -pl maven-plgu-case -am
-   && mvn clean compile -Dmaven.test.skip=false -Dcheckstyle.skip=false
+  - travis_wait 15 mvn clean compile -Dmaven.test.skip=false -Dcheckstyle.skip=false
 
 # 成功后创建分支
 after_success:
