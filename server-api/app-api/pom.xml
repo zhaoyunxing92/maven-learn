@@ -27,7 +27,6 @@
     </dependencies>
 
     <build>
-
         <plugins>
             <plugin>
                 <groupId>io.github.sunny</groupId>
