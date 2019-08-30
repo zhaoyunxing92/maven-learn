@@ -21,11 +21,11 @@
         <module>server</module>
         <module>server-api</module>
         <module>base-dependencies</module>
+        <!--<module>core</module>-->
     </modules>
 
     <dependencyManagement>
         <dependencies>
-
             <dependency>
                 <groupId>io.github.sunny</groupId>
                 <artifactId>order-service</artifactId>
