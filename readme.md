@@ -187,7 +187,15 @@
 
 #### [插件开发](http://maven.apache.org/guides/plugin/guide-java-report-plugin-development.html)
 
-##### 配置读取
+##### 配置参数读取
 
-##### debug插件
+只列举基本使用,更多使用请查阅官网
+
+pom.xml
+
+```xml
+
+```
+
+##### debug调试插件
 
