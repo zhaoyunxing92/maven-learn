@@ -30,6 +30,13 @@
 
         <plugins>
             <plugin>
+                <groupId>io.github.sunny</groupId>
+                <artifactId>maven-plug-case</artifactId>
+                <configuration>
+                    <name>sunny</name>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>

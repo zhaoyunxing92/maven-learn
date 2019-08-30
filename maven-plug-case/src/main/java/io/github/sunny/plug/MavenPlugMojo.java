@@ -50,7 +50,7 @@ public class MavenPlugMojo extends AbstractMojo {
 
         getLog().info("===============读取配置数据==============");
 
-        getLog().info("name={}" + name);
+        getLog().info("name=" + name);
 
         getLog().info("=============================");
     }

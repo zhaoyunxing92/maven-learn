@@ -12,8 +12,6 @@
 ### 使用前准备
 
 ```shell
-# 安装插件到本地
-mvn install -pl maven-plug-case -am
-# 检验是否编译通过
-mvn compile -up
+# 安装到本地仓库
+mvn install
 ```
