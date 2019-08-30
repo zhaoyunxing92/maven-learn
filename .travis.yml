@@ -6,7 +6,8 @@ jdk:
 cache:
   directories:
     - $HOME/.m2
-#install: true
+#install: true #跳过安装
+
 
 env:
   global:
@@ -45,7 +46,7 @@ after_success:
   - git chechout -b ${branch_name}
   - git config user.name "${name}"
   - git config user.email "${email}"
-  - mvn versions:set -DnewVersion=2.0
+  - mvn versions:set -DnewVersion=${branch_version}
   - mvn versions:commit
   - git commit -am '[up]修改版本为${branch_name}'
   - git push -f --quiet "https://${github_token}@${repo_url}" ${branch_name}
