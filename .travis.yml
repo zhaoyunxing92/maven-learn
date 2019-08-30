@@ -31,9 +31,6 @@ notifications:
 #      - zhaoyunxing@ccclubs.com
 #      - 2385585770@qq.com
 
-before_deploy:
-  - echo maven runing
-
 # 只在master分支工作
 branches:
   only:
@@ -45,6 +42,7 @@ script:
 # 成功后创建分支
 after_success:
   - echo mvn compile success begin git make branch
+  - mvn -v
   - git chechout -b ${branch_name}
   - git config user.name "${name}"
   - git config user.email "${email}"
@@ -52,6 +50,7 @@ after_success:
   - mvn versions:commit
   - git commit -am '[up]修改版本为${branch_name}'
   - git push -f --quiet "https://${github_token}@${repo_url}" ${branch_name}:${branch_name}
+  -
   #- bash <(curl -s https://codecov.io/bash) # 编译通过后启用codecov
 
 # 失败后撤回代码
