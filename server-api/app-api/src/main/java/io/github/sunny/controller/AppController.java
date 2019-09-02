@@ -40,13 +40,15 @@ public class AppController {
     @GetMapping("/git")
     public Response getGitInfo() {
 
-        Properties properties = new Properties();
-        InputStream in = getClass().getClassLoader().getResourceAsStream("git.properties");
         try {
+            Properties properties = new Properties();
+            InputStream in = getClass().getClassLoader().getResourceAsStream("git.properties");
             properties.load(in);
-        } catch (IOException ex) {
+            return Response.createSuccess("加载git.properties成功", JSONObject.toJSON(properties));
+        } catch (Exception ex) {
             log.error("加载[git.properties]属性文件异常:{}", ex.getLocalizedMessage());
+            return Response.createError("请使用jar方式启动项目");
         }
-        return Response.createSuccess("加载git.properties成功", JSONObject.toJSON(properties));
+
     }
 }
