@@ -46,7 +46,11 @@ public class Response<T> implements Serializable {
     }
 
     public static Response createError(String msg, Integer code) {
-        return createFormatMsg(msg, code, null, false);
+        return createFormatMsg(msg, code, false, null);
+    }
+
+    public static Response createError(String msg) {
+        return createError(msg, -1);
     }
 
     private static Response createFormatMsg(String msg, Object data, Boolean success, Object... args) {
