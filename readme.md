@@ -25,6 +25,9 @@
   
   # 确定后提交本次修改
   mvn versions:commit
+  
+  # 然后在package或者deploy
+  mvn package/deploy
   ```
 
 * 在`3.5.0-beta-1`版本之后
@@ -32,7 +35,7 @@
   添加了${revision}, ${sha1} , ${changelist} 三个关键字,方便动态修改版本
  
   ```shell
-  mvn -Drevision=2.0-SNAPSHOT
+  mvn package/deploy -Drevision=2.0-SNAPSHOT
   ```
  
   这样pom文件必须添加`flatten-maven-plugin`
