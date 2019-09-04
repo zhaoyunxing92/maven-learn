@@ -12,17 +12,38 @@
     <artifactId>web-api</artifactId>
 
     <dependencies>
+
+
+        <!--谁在后面用谁-->
+        <!-- <dependency>
+             <groupId>io.github.sunny</groupId>
+             <artifactId>user-api</artifactId>
+             <version>2.0</version>
+         </dependency>
+         <dependency>
+             <groupId>io.github.sunny</groupId>
+             <artifactId>user-api</artifactId>
+             <version>3.0</version>
+         </dependency>-->
+
+        <!--链路相同谁在上就用谁-->
+       <!-- <dependency>
+            <groupId>io.github.sunny</groupId>
+            <artifactId>user-service</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.github.sunny</groupId>
+            <artifactId>order-service</artifactId>
+        </dependency>-->
+
+        <!--链路最短原则-->
         <dependency>
             <groupId>io.github.sunny</groupId>
             <artifactId>web-api-dependencies</artifactId>
         </dependency>
         <dependency>
             <groupId>io.github.sunny</groupId>
-            <artifactId>user-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.github.sunny</groupId>
-            <artifactId>order-api</artifactId>
+            <artifactId>user-service</artifactId>
         </dependency>
     </dependencies>
 </project>

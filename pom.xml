@@ -33,15 +33,20 @@
             </dependency>
             <dependency>
                 <groupId>io.github.sunny</groupId>
+                <artifactId>user-service</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.sunny</groupId>
                 <artifactId>common-dependencies</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
-            <dependency>
-                <groupId>io.github.sunny</groupId>
-                <artifactId>user-api</artifactId>
-                <version>${project.version}</version>
-            </dependency>
+            <!--<dependency>-->
+                <!--<groupId>io.github.sunny</groupId>-->
+                <!--<artifactId>user-api</artifactId>-->
+                <!--<version>${project.version}</version>-->
+            <!--</dependency>-->
 
             <dependency>
                 <groupId>io.github.sunny</groupId>

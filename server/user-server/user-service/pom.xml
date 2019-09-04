@@ -6,6 +6,7 @@
         <artifactId>user-server</artifactId>
         <groupId>io.github.sunny</groupId>
         <version>${revision}</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -15,6 +16,11 @@
         <dependency>
             <groupId>io.github.sunny</groupId>
             <artifactId>service-dependencies</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.github.sunny</groupId>
+            <artifactId>user-api</artifactId>
+            <version>1.0</version>
         </dependency>
     </dependencies>
 </project>
