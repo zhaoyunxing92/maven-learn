@@ -35,20 +35,20 @@ mvn install
    
    这里就拿spring boot举例，我们想批量导入它的版本依赖
    
-   ```xml
-     <dependencyManagement>
-        <dependencies>
-            <!--spring boot-->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>2.1.0-RELEASE</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-      </dependencyManagement>
-   ```
+```xml
+ <dependencyManagement>
+    <dependencies>
+        <!--spring boot-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-dependencies</artifactId>
+            <version>2.1.0-RELEASE</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+    </dependencies>
+  </dependencyManagement>
+```
 
 ### 依赖冲突和版本选择机制
 
@@ -78,7 +78,6 @@ mvn install
 [INFO] --- maven-dependency-plugin:2.8:tree (default-cli) @ web-api ---
 [INFO] io.github.sunny:web-api:jar:1.0-SNAPSHOT
 [INFO] \- io.github.sunny:user-api:jar:3.0:compile
-
 ```
 
 #### 链路相同谁在上就用谁
