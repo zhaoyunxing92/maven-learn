@@ -37,7 +37,7 @@ notifications:
 # 只在master分支工作
 branches:
   only:
-    - maven-ci
+    - maven-dep-mechanism
 
 script:
   - travis_wait 15 mvn package -Drevision=${branch_version} -Dmaven.test.skip=false -Dcheckstyle.skip=false
