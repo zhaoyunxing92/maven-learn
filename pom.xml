@@ -16,14 +16,14 @@
         <fastjson.version>1.2.58</fastjson.version>
         <flatten-maven-plugin.version>1.1.0</flatten-maven-plugin.version>
         <git-commit-id-plugin.version>2.2.4</git-commit-id-plugin.version>
+        <docker-maven-plugin.version>1.0.0</docker-maven-plugin.version>
+        <appassembler-maven-plugin.version>2.0.0</appassembler-maven-plugin.version>
     </properties>
 
     <modules>
         <module>server</module>
         <module>server-api</module>
         <module>base-dependencies</module>
-        <module>maven-plug-case</module>
-        <!--<module>core</module>-->
     </modules>
 
     <dependencyManagement>
@@ -129,8 +129,6 @@
                     <source>1.8</source>
                     <target>1.8</target>
                     <encoding>UTF-8</encoding>
-                    <!--<verbose>false</verbose>-->
-                    <!--<showWarnings>false</showWarnings>-->
                     <compilerVersion>1.8</compilerVersion>
                 </configuration>
             </plugin>
@@ -139,14 +137,24 @@
         <pluginManagement>
             <plugins>
                 <plugin>
-                    <groupId>io.github.sunny</groupId>
-                    <artifactId>maven-plug-case</artifactId>
-                    <version>${project.version}</version>
-                </plugin>
-                <plugin>
                     <groupId>pl.project13.maven</groupId>
                     <artifactId>git-commit-id-plugin</artifactId>
                     <version>${git-commit-id-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>com.spotify</groupId>
+                    <artifactId>docker-maven-plugin</artifactId>
+                    <version>${docker-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>appassembler-maven-plugin</artifactId>
+                    <version>${appassembler-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring.boot.version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>
