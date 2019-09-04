@@ -4,7 +4,7 @@
 
 这个分支主要解释怎么动态修改版本
 
-场景: 假如我们开发完成一个周期开发,或者完成一个版本开发需要编译一个版本
+场景: 假如我们开发完成一个周期开发,或者完成一个版本开发需要编译一个2.0-SNAPSHOT版本
 
 ### 参考文档
 
@@ -20,7 +20,7 @@
   # 先修改版本
   mvn versions:set -DnewVersion=2.0-SNAPSHOT
   
-  # 这个时候会生成一个备份文件`pom.xml.versionsBackup`,如果你测试发现编译的`1.0.2-SNAPSHOT`需要归回滚或者放弃
+  # 这个时候会生成一个备份文件`pom.xml.versionsBackup`,如果你测试发现编译的`2.0-SNAPSHOT`需要归回滚或者放弃
   mvn versions:revert
   
   # 确定后提交本次修改
