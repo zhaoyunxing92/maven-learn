@@ -1,6 +1,6 @@
 # maven-ci
 
-[![Build Status](https://travis-ci.com/zhaoyunxing92/maven-learn.svg?branch=master)](https://travis-ci.com/zhaoyunxing92/maven-learn)
+[![Build Status](https://travis-ci.com/zhaoyunxing92/maven-learn.svg?branch=mavne-ci)](https://travis-ci.com/zhaoyunxing92/maven-learn)
 
 这个分支主要解释怎么动态修改版本
 

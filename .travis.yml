@@ -27,7 +27,7 @@ env:
 notifications:
   email:
     on_failure: always # 失败通知
-    on_success: always # 成功不通知:never
+    on_success: never # 成功不通知:never
 #    recipients:  #列表没有配置成功
 #      - zhaoyunxing@ccclubs.com
 #      - 2385585770@qq.com
@@ -37,31 +37,27 @@ notifications:
 # 只在master分支工作
 branches:
   only:
-    - master
-
-before_script:
-  - echo 'maven install all'
-  - mvn install
+    - maven-ci
 
 script:
-  - travis_wait 15 mvn clean compile -Dmaven.test.skip=false -Dcheckstyle.skip=false
+  - travis_wait 15 mvn package -Drevision=${branch_version} -Dmaven.test.skip=false -Dcheckstyle.skip=false
 
 # 成功后创建分支
 after_success:
   - echo mvn compile success begin git make branch
-  - git chechout -b ${branch_name}
-  - git config user.name "${name}"
-  - git config user.email "${email}"
-  - mvn versions:set -DnewVersion=${branch_version}
-  - mvn versions:commit
-  - git commit -am '[up]修改版本为${branch_name}'
-  - git push -f --quiet "https://${github_token}@${repo_url}" ${branch_name}
+#  - git chechout -b ${branch_name}
+#  - git config user.name "${name}"
+#  - git config user.email "${email}"
+#  - mvn versions:set -DnewVersion=${branch_version}
+#  - mvn versions:commit
+#  - git commit -am '[up]修改版本为${branch_name}'
+#  - git push -f --quiet "https://${github_token}@${repo_url}" ${branch_name}
   #- bash <(curl -s https://codecov.io/bash) # 编译通过后启用codecov
 
 # 失败后撤回代码
 after_failure:
   - echo mvn comile fail begin git rooback
-  - git config user.name "${name}"
-  - git config user.email "${email}"
-  - git reset --hard ^
-  - git push -f --quiet "https://${github_token}@${repo_url}" ${branch_name}:${branch_name}
+#  - git config user.name "${name}"
+#  - git config user.email "${email}"
+#  - git reset --hard ^
+#  - git push -f --quiet "https://${github_token}@${repo_url}" ${branch_name}:${branch_name}
