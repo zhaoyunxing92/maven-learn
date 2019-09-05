@@ -1,27 +1,37 @@
-# maven-plugin
+# logback-spring
 
-[![Build Status](https://travis-ci.com/zhaoyunxing92/maven-learn.svg?branch=maven-plug)](https://travis-ci.com/zhaoyunxing92/maven-learn)
+[![Build Status](https://travis-ci.com/zhaoyunxing92/maven-learn.svg?branch=logback)](https://travis-ci.com/zhaoyunxing92/maven-learn)
 
-这个分支主要安利插件的
+这个分支主要说明怎么使用logback-spring.xml、动态修改日志
 
-#### 使用前准备工作
+### 可以参考的文档
 
-* mvn install
+ * [logback-extensions](https://docs.spring.io/spring-boot/docs/2.2.0.M5/reference/html/spring-boot-features.html#boot-features-logback-extensions) spring boot对logback的扩展
 
-#### 插件安利
+### spring boot下的logback
 
- * [docker-maven-plugin](https://github.com/spotify/docker-maven-plugin) 编译docker images 代码参考地址: https://github.com/zhaoyunxing92/springboot-docker
+ 在使用`logback-spring.xml`就可以读取yml文件的配置了
  
-  * 跳转到app-api目录执行:`mvn clean package docker:build`生成docker image文件
-  
-  * docker run -d --name=app-api -p 8081:8081 app-api:1.0-SNAPSHOT
+ * 根据环境不同采取不同的策略
  
-  * curl localhost:8081/git　(或者浏览器访问) # 可以看到git commit 信息
+  ```xml
+   <springProfile name="local">
+        <root level="DEBUG">
+            <appender-ref ref="console"/>
+            <appender-ref ref="file"/>
+        </root>
+    </springProfile>
+    <springProfile name="dev">
+        <root level="DEBUG">
+            <appender-ref ref="file"/>
+        </root>
+    </springProfile>
+  ```
  
- * `git-commit-id-plugin` git 提交记录抽取
+ * 读取yml文件配置
  
-  跳转到app-api目录执行：`mvn clean package` 生成git.properties文件
+ ```xml
+  <springProperty scope="context" name="log_home" source="log.path" defaultValue="./logs"/>
+ ``` 
 
- * `appassembler-maven-plugin` 生成多环境运行脚本
-   
-  跳转到web-api目录执行：`mvn clean package appassembler:assemble` target/dist目录下
+### 动态日志级别

@@ -5,3 +5,9 @@ spring:
     active: local
 server:
   port: 8081
+# 关闭安全校验
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
