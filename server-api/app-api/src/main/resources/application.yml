@@ -7,6 +7,11 @@ server:
   port: 8081
 # 关闭安全校验
 management:
+  info:
+    git:
+      # 配置git信息 这个要结合插件git-commit-id-plugin,最终读取git.properties信息
+      enabled: true
+      mode: full
   endpoints:
     web:
       exposure:

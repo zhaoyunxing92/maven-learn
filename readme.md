@@ -35,3 +35,7 @@
  ``` 
 
 ### 动态日志级别
+
+这个根据项目架构来，如果项目中集成了[spring-boot-starter-actuator](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#production-ready)则用`actuator`如果没有自己编写
+
+#### [spring-boot-starter-actuator](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#production-ready)
