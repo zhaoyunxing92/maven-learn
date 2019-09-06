@@ -10,6 +10,14 @@
 
 * [beans-java-conditional](https://docs.spring.io/spring/docs/5.0.15.RELEASE/spring-framework-reference/core.html#beans-java-conditional)
 
-步骤
+### 开始前工作
 
- * git 
+ * git checkout maven-1.x && mvn install
+ 
+ * git clone https://github.com/zhaoyunxing92/maven-learn-core.git && cd ./maven-learn-core && mvn install
+ 
+### 打开浏览器访问观察变化
+
+* http://localhost:8082/order
+
+* http://localhost:8081/order
