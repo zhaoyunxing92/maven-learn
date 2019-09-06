@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.com/zhaoyunxing92/maven-learn.svg?branch=master)](https://travis-ci.com/zhaoyunxing92/maven-learn)
 
 ### 参考文档
+
 * [maven-ci-friendly](https://maven.apache.org/maven-ci-friendly.html) 动态ci使用说明
 
 * [maven-3.5.0-beta-notes](https://maven.apache.org/docs/3.5.0-beta-1/release-notes.html) 主要添加动态修改版本号
@@ -32,6 +33,20 @@
     ├── app-api  -- 手机端api
     └── web-api  -- h5端api
 ```
+
+### 分支说明
+
+ * [condition](https://github.com/zhaoyunxing92/maven-learn/tree/condition) 主要是条件注入bean
+ 
+ * [logback](https://github.com/zhaoyunxing92/maven-learn/tree/logback) logback使用、动态日志
+ 
+ * [maven-ci](https://github.com/zhaoyunxing92/maven-learn/tree/maven-ci) maven动态版本号
+ 
+ * [maven-dep-mechanism](https://github.com/zhaoyunxing92/maven-learn/tree/maven-dep-mechanism) maven的依赖机制说明
+ 
+ * [maven-plug](https://github.com/zhaoyunxing92/maven-learn/tree/maven-plug) maven插件安利
+ 
+ * [plug](https://github.com/zhaoyunxing92/maven-learn/tree/plug) maven插件开发
 
 ### maven中的水平拆分和垂直拆分
 
