@@ -6,6 +6,10 @@
 
 思路: 利用`@ConditionalOnClass`注解,如果是`app`服务就使用lang类型的时间处理
 
+### 参考的文档
+
+* [beans-java-conditional](https://docs.spring.io/spring/docs/5.0.15.RELEASE/spring-framework-reference/core.html#beans-java-conditional)
+
 步骤
 
  * git 
