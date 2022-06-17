@@ -13,7 +13,7 @@
         <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
         <revision>1.0-SNAPSHOT</revision>
         <spring.boot.version>2.1.0.RELEASE</spring.boot.version>
-        <fastjson.version>1.2.58</fastjson.version>
+        <fastjson.version>1.2.83</fastjson.version>
         <flatten-maven-plugin.version>1.1.0</flatten-maven-plugin.version>
         <git-commit-id-plugin.version>2.2.4</git-commit-id-plugin.version>
     </properties>
